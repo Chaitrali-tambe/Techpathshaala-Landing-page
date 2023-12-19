@@ -10,22 +10,30 @@ body{
 :root{
     --yellow: #F3BD00;
     --blue: #0948B4;
+    --red: #DB2323;
 }
+
 
 
 .navbar{
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 0 3rem;
     
 }
 
+
+
+
 .timer{
     display: flex;
     align-items: center;
     gap: 10px;
+
 }
+
 
 .timer-text{
     display: flex;
@@ -34,6 +42,7 @@ body{
     font-weight: bold;
     text-align: left;
     margin-right: 10px;
+    margin-bottom: 0;
 
     
 }
@@ -72,6 +81,58 @@ body{
     background-color: var(--yellow);
 }
 
+@media (max-width:600px) {
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 0;
+        
+        
+    }
+
+
+    .logo{
+        width: 100px;
+        align-self: start;
+        padding-left: 30px;
+    }
+
+    .num{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 35px;
+        padding: 0%;
+    }
+
+    .reserve-btn{
+        display: none;
+    }
+
+    
+
+
+    /*Intro part*/
+    .intro{
+        display: block;
+        padding: 0;
+    }
+    .left-side{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 0%;
+    }
+
+    .left-side h1{
+        font-size: 21px;
+    }
+}
+
 .intro{
     display: flex;
     background-color: var(--blue);
@@ -79,7 +140,9 @@ body{
     padding: 2.5rem 8rem;
     padding-bottom: 7rem;
     position: relative;
-    z-index: 1;
+   
+    
+    
 }
 
 .left-side{
@@ -133,11 +196,55 @@ body{
     margin-right: 1rem;
 }
 
+
+.right-side{
+    display: flex;
+    position: relative;
+}
+
+.right-side .mentor-name{
+    height: 110px;
+}
+
+.right-side .mentor-image{
+    height: 450px;
+}
+
+.mentor-Suhail-name{
+    position: absolute;
+    left: -80px;
+    bottom: -80px;
+}
+
+.mentor-Suhail-img{
+    position: absolute;
+    left: 80px;
+    bottom: -65px;
+}
+
+
+.mentor-Munaf-img{
+    position: absolute;
+    left: 235px;
+    bottom: -65px;
+}
+
+.mentor-Munaf-name{
+    position: absolute;
+    right: -700px;
+    bottom: 230px;
+    
+}
+
+
+
 .about{
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    z-index: 5;
+
     
 }
 
@@ -145,11 +252,11 @@ body{
 .entry{
     width: 70%;
     box-shadow: 0px 2px 1px grey;
-    padding: 1% 5%;
+    padding: 1.5% 5%;
     border-radius: 15px;
     position: absolute;
     top: -40px;
-    z-index: 2;
+    z-index: 6;
     
 }
 
@@ -193,7 +300,9 @@ body{
     margin-top: 80px;
     display: flex;
     flex-direction: column;
+    justify-items: center;
     align-items: center;
+    margin-bottom: 4rem;
 }
 
 .learning-details h1{
@@ -208,13 +317,124 @@ body{
 
 .learn-cards{
     display: grid;
-    grid-template-columns: 350px 350px 350px;
-    grid-template-rows: 250px 250px 250px;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+    grid-template-rows: repeat(2, minmax(250px, 1fr));
+    column-gap: 40px;
+    align-items: center;
+    justify-items: center;
+    
 }
 
 .card{
+    box-sizing: border-box;
     box-shadow: 0 2px 10px rgb(222, 222, 222);
-    width: 300px;
+    width: 350px;
     height: 200px;
     text-align: center;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 11px;
 }
+
+.card-1{
+    grid-column: 1/3;
+}
+
+.card-2{
+    
+    grid-column: 3/5;
+}
+
+.card-3{
+    
+    grid-column: 5/7;
+}
+.card-4{
+    grid-row: 2/3;
+    grid-column: 2/4;
+}
+
+.card-5{
+    grid-row: 2/3;
+    grid-column: 4/6;
+}
+
+
+.card h2{
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+.card p{
+    font-size: 16px;
+    color: #707070;
+}
+
+.workshop-details{
+    background-color: #ebf2ff;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 70px;
+    border-radius: 10px;
+}
+
+.workshop-details .content{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    text-align: center;
+    align-items: center;
+    justify-items: space-evenly;
+    margin-top: 20px;
+
+}
+
+.block{
+    margin: 0 2rem;
+    
+}
+
+.block h4{
+    color: var(--red);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+    
+
+}
+
+.detail-4-img{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.classroom{
+    box-sizing: content-box;
+    width: 100vw;
+    height: 400px;
+    
+}
+
+.classroom img{
+    width: inherit;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
